@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Proyectos — WilAInova{% endblock %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+
+    <!-- TÍTULO -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Proyectos Realizados</h2>
+      <p class="text-muted">Soluciones reales desarrolladas para web y sistemas</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- PROYECTO 1 -->
+      <div class="col-md-4">
+        <div class="project-card h-100">
+          <img src="{{ url_for('static', filename='images/Sistema-centr.jpeg') }}" alt="Centro de Capacitación">
+          <div class="card-body">
+            <h5 class="project-name">Centro de Capacitación</h5>
+            <p class="project-desc">
+              Plataforma web para gestión y promoción de servicios educativos.
+            </p>
+            <a href="https://centrocapacitacion-1.onrender.com"
+               target="_blank"
+               class="btn btn-warning btn-sm">
+               Ver proyecto
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROYECTO 2 -->
+      <div class="col-md-4">
+        <div class="project-card h-100">
+          <img src="{{ url_for('static', filename='images/Sistema-res.jpeg') }}" alt="Sistema de Reservas">
+          <div class="card-body">
+            <h5 class="project-name">Sistema de Reservas</h5>
+            <p class="project-desc">
+              Sistema web para reservas de canchas y locales comerciales.
+            </p>
+            <a href="https://sistema-de-reservas-1.onrender.com"
+               target="_blank"
+               class="btn btn-warning btn-sm">
+               Ver proyecto
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROYECTO 3 -->
+      <div class="col-md-4">
+        <div class="project-card h-100">
+          <img src="{{ url_for('static', filename='images/Sistema-vent.jpeg') }}" alt="Sistema de Ventas">
+          <div class="card-body">
+            <h5 class="project-name">Mini Sistema de Ventas</h5>
+            <p class="project-desc">
+              Aplicación web para gestión de productos y ventas.
+            </p>
+            <a href="https://ventas-1-olg0.onrender.com"
+               target="_blank"
+               class="btn btn-warning btn-sm">
+               Ver proyecto
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

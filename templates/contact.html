@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}Contacto — WilAInova{% endblock %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+
+    <!-- TÍTULO -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Contacto</h2>
+      <p class="text-muted">
+        Cuéntame sobre tu proyecto y te responderé a la brevedad.
+      </p>
+    </div>
+
+    <div class="row align-items-start">
+
+      <!-- FORMULARIO -->
+      <div class="col-md-7 mb-4">
+        <form method="post" action="{{ url_for('contact') }}">
+
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, msg in messages %}
+                <div class="alert alert-{{ category }} mb-3">
+                  {{ msg }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+          <div class="mb-3">
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Nombre completo"
+              required>
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="Correo electrónico"
+              required>
+          </div>
+
+          <div class="mb-4">
+            <textarea
+              name="message"
+              class="form-control"
+              rows="5"
+              placeholder="Describe tu proyecto o consulta"
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-warning px-4">
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+
+      <!-- INFO DE CONTACTO -->
+      <div class="col-md-5">
+        <div class="p-4 rounded bg-dark border">
+          <h5 class="fw-bold mb-3">Contacto directo</h5>
+
+          <p class="mb-2">
+            <strong>Email:</strong><br>
+            wilainova@gmail.com
+          </p>
+
+          <p class="mb-2">
+            <strong>Teléfono / WhatsApp:</strong><br>
+            +591 73081556
+          </p>
+
+          <p class="mb-0">
+            <strong>Disponibilidad:</strong><br>
+            Proyectos freelance y colaboraciones.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

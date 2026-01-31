@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Fitness — WilAInova{% endblock %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+
+    <!-- TÍTULO -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Fitness Gym</h2>
+      <p class="text-muted">
+        Disciplina, constancia y enfoque fuera del código.
+      </p>
+    </div>
+
+    <!-- IMAGEN -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-6 text-center">
+        <img
+          src="{{ url_for('static', filename='images/gym.jpeg') }}"
+          alt="Entrenamiento WilAInova"
+          class="img-fluid rounded-4 shadow">
+      </div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+
+        <video
+          class="w-100 rounded-4 shadow"
+          controls
+          muted
+          playsinline
+          preload="metadata">
+
+          <source src="{{ url_for('static', filename='videos/fitness.mp4') }}" type="video/mp4">
+          Tu navegador no soporta video HTML5.
+        </video>
+
+      </div>
+    </div>
+
+    <!-- TEXTO CORTO -->
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-8 text-center">
+        <p class="text-muted">
+          El entrenamiento forma parte de mi rutina diaria.
+          Me ayuda a mantener disciplina, enfoque y constancia en cada proyecto.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

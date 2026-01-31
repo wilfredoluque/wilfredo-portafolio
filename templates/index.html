@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Inicio — WilAInova{% endblock %}
+
+{% block content %}
+
+<!-- HERO / IDENTIDAD -->
+<section class="hero d-flex align-items-center">
+  <div class="overlay"></div>
+  <div class="container text-center text-white">
+
+          <h1 class="hero-title">Bienvenido a mi portafolio<br>
+          <span class="accent">Soluciones Web & IA</span>
+          </h1>
+
+        <p class="hero-lead mt-3">
+                  Soy Wilfredo. Desarrollo aplicaciones web modernas
+                  y soluciones digitales con inteligencia artificial.
+        </p>
+
+    <div class="mt-4">
+      <a href="{{ url_for('contact') }}" class="btn btn-warning btn-lg me-2">
+        Contáctame
+      </a>
+      <a href="{{ url_for('projects') }}" class="btn btn-outline-light btn-lg">
+        Ver proyectos
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="py-5">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">¿Qué hago?</h2>
+      <p class="text-muted">
+        Desarrollo soluciones digitales funcionales y profesionales.
+      </p>
+    </div>
+
+    <div class="row text-center g-4">
+
+      <div class="col-md-4">
+        <div class="card card-dark h-100">
+          <h5 class="fw-bold mb-2">Desarrollo Web</h5>
+          <p>
+            Páginas y aplicaciones web modernas, rápidas y adaptadas a cualquier dispositivo.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-dark h-100">
+          <h5 class="fw-bold mb-2">Inteligencia Artificial</h5>
+          <p>
+            Automatización, asistentes inteligentes y soluciones prácticas con IA.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-dark h-100">
+          <h5 class="fw-bold mb-2">Soluciones Digitales</h5>
+          <p>
+            Desarrollo enfocado en resultados, usabilidad y crecimiento del negocio.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PROYECTO DESTACADO -->
+<section class="py-5 bg-light">
+  <div class="container">
+
+    <!-- TÍTULO + DESCRIPCIÓN -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Proyecto Destacado</h2>
+      <p class="text-muted">
+        Desarrollo web profesional para negocios de belleza y estética.
+        Sitios claros, visuales y orientados a captar clientes.
+      </p>
+    </div>
+
+    <!-- PROYECTO ÚNICO -->
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-7">
+        <div class="project-card h-100 text-center">
+
+          <img
+            src="{{ url_for('static', filename='images/Estetic.jpeg') }}"
+            alt="Sitio web para salón de belleza"
+            class="img-fluid rounded">
+
+          <div class="card-body mt-3">
+            <h5 class="project-name fw-bold">
+              Salón de Belleza & Estética
+            </h5>
+
+            <a href="https://salon-de-belleza.onrender.com/"
+               target="_blank"
+               class="btn btn-warning btn-sm mt-2">
+              Ver sitio web
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="text-center mt-5">
+      <a href="{{ url_for('projects') }}" class="btn btn-outline-dark btn-lg">
+        Ver todos los proyectos
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

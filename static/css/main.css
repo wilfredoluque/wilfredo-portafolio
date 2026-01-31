@@ -1,0 +1,447 @@
+/* =======================
+   VARIABLES / PALETA
+======================= */
+:root {
+  --bg: #0b0b0c;
+  --panel: #111;
+  --muted: #9aa0a6;
+  --accent: #d9a231;   /* dorado */
+  --highlight: #4f8cff;
+  --text: #eee;
+  --shadow: rgba(0,0,0,.4);
+}
+
+/* =======================
+   RESET + BASE
+======================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+body.theme-dark {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-content {
+  flex: 1;
+}
+
+/* =======================
+   NAVBAR
+======================= */
+.navbar {
+  background: rgba(10,10,12,.85);
+  backdrop-filter: blur(8px);
+  padding: 14px 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-brand .logo {
+  height: 52px;
+}
+
+.navbar-brand .brand-name {
+  font-weight: 700;
+  color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ddd;
+  font-weight: 500;
+  transition: color .3s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: var(--accent);
+}
+
+/* =======================
+   HERO
+======================= */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  background: url("../images/wilfredo.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.hero-title .accent {
+  color: var(--accent);
+}
+
+.hero-lead {
+  max-width: 760px;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+/* =======================
+   SECCIONES
+======================= */
+section {
+  padding: 80px 0;
+}
+
+.bg-light {
+  background: #f6f7f9 !important;
+  color: #111;
+}
+
+.bg-light h2,
+.bg-light p {
+  color: #111;
+}
+
+/* =======================
+   SERVICIOS
+======================= */
+.card {
+  border-radius: 14px;
+}
+
+.card-dark {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.05);
+  padding: 32px;
+  height: 100%;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.card-dark h5 {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.card-dark p {
+  color: var(--muted);
+}
+
+.card-dark:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px var(--shadow);
+}
+
+/* =======================
+   PROYECTOS
+======================= */
+.project-card {
+  background: var(--panel);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.06);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-card .card-body {
+  padding: 24px;
+}
+
+.project-name {
+  font-weight: 700;
+  color: var(--highlight);
+  margin-bottom: 8px;
+}
+
+.project-desc {
+  font-size: .95rem;
+  color: #ddd;
+  margin-bottom: 14px;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px var(--shadow);
+}
+
+/* =======================
+   CONTACTO
+======================= */
+form .form-control {
+  background: #0f0f10;
+  border: 1px solid rgba(255,255,255,.1);
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+form .form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(217,162,49,.25);
+}
+
+textarea {
+  resize: none;
+}
+
+.bg-dark {
+  background: #111 !important;
+}
+
+/* =======================
+   BOTONES
+======================= */
+.btn-warning {
+  background: var(--accent);
+  border: none;
+  color: #111;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 22px;
+}
+
+.btn-warning:hover {
+  background: #c08f2a;
+}
+
+.btn-outline-light {
+  border-radius: 8px;
+  padding: 10px 22px;
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer,
+.footer {
+  background: #0f0f12;
+  border-top: 1px solid rgba(255,255,255,.05);
+  padding: 40px 20px;
+  text-align: center;
+  color: #aaa;
+  font-size: .95rem;
+}
+
+/* =======================
+   ANIMACIONES
+======================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-dark,
+.project-card {
+  animation: fadeUp .8s ease both;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+
+  .hero {
+    min-height: 70vh;
+    text-align: center;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  .project-card img {
+    height: 190px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .navbar-brand .brand-name {
+    font-size: 1.1rem;
+  }
+}
+/* =======================
+   FIX CONTRASTE BG-LIGHT
+======================= */
+.bg-light h1,
+.bg-light h2,
+.bg-light h3,
+.bg-light h4,
+.bg-light h5,
+.bg-light p,
+.bg-light label {
+  color: #111 !important;
+}
+
+.bg-light .text-muted {
+  color: #555 !important;
+}
+/* =======================
+   CONTACTO - VISIBILIDAD
+======================= */
+.bg-light form .form-control {
+  background: #fff;
+  color: #111;
+  border: 1px solid #ccc;
+}
+
+.bg-light form .form-control::placeholder {
+  color: #666;
+}
+
+.bg-light form .form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(217,162,49,.25);
+}
+
+.bg-light form textarea {
+  color: #111;
+}
+/* =======================
+   PROYECTOS - TEXTO
+======================= */
+.bg-light .project-desc {
+  color: #333;
+}
+
+.bg-light .project-name {
+  color: #1a4fbf;
+}
+.bg-light .project-card,
+.bg-light .card {
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+/* =======================
+   PROYECTO DESTACADO – TEXTO LEGIBLE
+======================= */
+
+.project-card {
+  position: relative;
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* Overlay fuerte para contraste */
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.15) 0%,
+    rgba(0,0,0,.88) 75%
+  );
+  z-index: 1;
+}
+
+/* Imagen */
+.project-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenido */
+.project-card .card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 28px;
+  text-align: center;
+}
+
+/* Título */
+.project-card .project-name {
+  font-size: 1.45rem;       /* visible pero elegante */
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: .4px;
+}
+
+/* Descripción */
+.project-card .project-desc {
+  font-size: 1.05rem;       /* se lee bien */
+  color: #e6e6e6;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+/* Botón */
+.project-card .btn-warning {
+  font-size: .95rem;
+  padding: 10px 26px;
+}
+
+/* =======================
+   RESPONSIVE – CELULAR
+======================= */
+@media (max-width: 576px) {
+  .project-card img {
+    height: 260px;
+  }
+
+  .project-card .project-name {
+    font-size: 1.25rem;
+  }
+
+  .project-card .project-desc {
+    font-size: .95rem;
+  }
+}
